@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const Albums = () => {
   const [albums, setAlbums] = useState([]);
@@ -66,8 +66,9 @@ const Albums = () => {
               <tr key={album.id} className="hover:bg-gray-50">
                 <td className="border border-gray-300 px-4 py-2">{album.id}</td>
                 <td className="border border-gray-300 px-4 py-2">{album.title}</td>
-                <td className="border border-gray-300 px-4 py-2"
-                onClick={() => navigate(`/users/${user.id}`)}
+                <td
+                  className="border border-gray-300 px-4 py-2 hover:cursor-pointer"
+                  onClick={() => navigate(`/users/${user.id}`)}
                 >
                   <div className="flex items-center gap-2">
                     <div
@@ -78,8 +79,9 @@ const Albums = () => {
                     <span className="text-blue-600">{user?.name}</span>
                   </div>
                 </td>
-                <td className="border border-gray-300 bg-white px-4 py-2"
-                onClick={() => navigate(`/albums/${album.id}`)}
+                <td
+                  className="border border-gray-300 bg-white px-4 py-2"
+                  onClick={() => navigate(`/albums/${album.id}`)}
                 >
                   <button className="text-sm text-gray-700 border border-gray-300 px-2 py-1 bg-white">
                     👁️ Show
@@ -98,7 +100,6 @@ const Albums = () => {
             disabled={currentPage === 1}
             className="px-2 py-1 border rounded disabled:opacity-50 bg-white"
           >
-            &lt;
           </button>
           {Array.from({ length: totalPages }, (_, i) => i + 1)
             .slice(0, 5)
@@ -122,7 +123,6 @@ const Albums = () => {
             disabled={currentPage === totalPages}
             className="px-2 py-1 border rounded disabled:opacity-50 bg-white"
           >
-            &gt;
           </button>
         </div>
 
