@@ -74,8 +74,8 @@ const Albums = () => {
                     <span className="text-blue-600">{user?.name}</span>
                   </div>
                 </td>
-                <td className="border border-gray-300 px-4 py-2">
-                  <button className="text-sm text-gray-700 border border-gray-300 px-2 py-1 rounded hover:bg-gray-100">
+                <td className="border border-gray-300 bg-white px-4 py-2">
+                  <button className="text-sm text-gray-700 border border-gray-300 px-2 py-1 bg-white">
                     👁️ Show
                   </button>
                 </td>
@@ -85,12 +85,12 @@ const Albums = () => {
         </tbody>
       </table>
 
-      <div className="flex justify-between items-center mt-4">
+      <div className="flex justify-between items-center mt-4 bg-white">
         <div className="flex items-center gap-2">
           <button
             onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
             disabled={currentPage === 1}
-            className="px-2 py-1 border rounded disabled:opacity-50"
+            className="px-2 py-1 border rounded disabled:opacity-50 bg-white"
           >
             &lt;
           </button>
@@ -102,8 +102,8 @@ const Albums = () => {
                 onClick={() => setCurrentPage(page)}
                 className={`px-3 py-1 border rounded ${
                   currentPage === page
-                    ? "bg-blue-100 border-blue-500"
-                    : "hover:bg-gray-100"
+                    ? "bg-blue-100 border-blue-500 bg-white"
+                    : "hover:bg-gray-100 bg-white"
                 }`}
               >
                 {page}
@@ -114,7 +114,7 @@ const Albums = () => {
               setCurrentPage((prev) => Math.min(prev + 1, totalPages))
             }
             disabled={currentPage === totalPages}
-            className="px-2 py-1 border rounded disabled:opacity-50"
+            className="px-2 py-1 border rounded disabled:opacity-50 bg-white"
           >
             &gt;
           </button>
@@ -124,7 +124,7 @@ const Albums = () => {
           <select
             value={pageSize}
             onChange={handlePageSizeChange}
-            className="border px-2 py-1 rounded"
+            className="border px-2 py-1 rounded bg-white text-gray-700"
           >
             <option value={10}>10 / page</option>
             <option value={20}>20 / page</option>

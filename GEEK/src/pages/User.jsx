@@ -31,11 +31,11 @@ const Users = () => {
           <tr>
             <th className="border px-4 py-2">ID</th>
             <th className="border px-4 py-2">Avatar</th>
-            <th className="border px-4 py-2">Name</th>
-            <th className="border px-4 py-2">Email</th>
-            <th className="border px-4 py-2">Phone</th>
-            <th className="border px-4 py-2">Website</th>
-            <th className="border px-4 py-2">Actions</th>
+            <th className="border px-20 py-2">Name</th>
+            <th className="border px-20 py-2">Email</th>
+            <th className="border px-20 py-2">Phone</th>
+            <th className="border px-20 py-2">Website</th>
+            <th className="border px-20 py-2">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -60,7 +60,7 @@ const Users = () => {
                 {user.website}
               </td>
               <td className="border px-4 py-2">
-                <button className="flex items-center gap-1 text-sm border rounded px-2 py-1 hover:bg-gray-100">
+                <button className="text-sm text-gray-700 border border-gray-300 px-2 py-1 bg-white">
                   👁️ Show
                 </button>
               </td>

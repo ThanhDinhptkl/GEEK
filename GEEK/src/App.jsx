@@ -9,7 +9,7 @@ function App() {
     <Router>
       <div className="flex h-screen">
         <Sidebar />
-        <div className="flex-1 p-6 overflow-auto bg-gray-900 text-white">
+        <div className="flex-1 p-6 overflow-auto bg-white text-white">
           <Routes>
             <Route path="/" element={<Navigate to="/albums" />} />
             <Route path="/albums" element={<Albums />} />
