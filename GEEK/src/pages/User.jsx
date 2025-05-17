@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import { useNavigate } from 'react-router-dom';
 const getInitials = (name) =>
   name
     ?.split(" ")
@@ -15,6 +15,7 @@ const avatarColors = [
 
 const Users = () => {
   const [users, setUsers] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -59,7 +60,9 @@ const Users = () => {
               <td className="border px-4 py-2 text-blue-600">
                 {user.website}
               </td>
-              <td className="border px-4 py-2">
+              <td className="border px-4 py-2"
+                 onClick={() => navigate(`/albums/${user.id}`)}
+              >
                 <button className="text-sm text-gray-700 border border-gray-300 px-2 py-1 bg-white">
                   👁️ Show
                 </button>

@@ -4,7 +4,7 @@ import Sidebar from "./components/Sidebar";
 import Albums from "./pages/Albums";
 import UserInfo from "./pages/User";
 import ShowUser from "./components/ShowUser";
-
+import ShowAlbum from "./components/ShowAlbum";
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
             <Route path="/albums" element={<Albums />} />
             <Route path="/users" element={<UserInfo />} />
              <Route path="/users/:userId" element={<ShowUser />} />
+             <Route path="/albums/:albumId" element={<ShowAlbum />} />
           </Routes>
         </div>
       </div>

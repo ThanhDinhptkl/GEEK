@@ -78,7 +78,9 @@ const Albums = () => {
                     <span className="text-blue-600">{user?.name}</span>
                   </div>
                 </td>
-                <td className="border border-gray-300 bg-white px-4 py-2">
+                <td className="border border-gray-300 bg-white px-4 py-2"
+                onClick={() => navigate(`/albums/${album.id}`)}
+                >
                   <button className="text-sm text-gray-700 border border-gray-300 px-2 py-1 bg-white">
                     👁️ Show
                   </button>
