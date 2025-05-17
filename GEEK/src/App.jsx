@@ -1,14 +1,18 @@
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import AlbumsPage from "./pages/Albums";
+import UsersPage from "./pages/Users";
+import AlbumInfoPage from "./pages/AlbumInfo";
+import UserInfoPage from "./pages/UserInfo";
 
-function App() {
-
+export default function App() {
   return (
-  <Router>
+    <Router>
       <Routes>
         <Route path="/" element={<AlbumsPage />} />
-        </Routes>
-      </Router>
-  )
+        <Route path="/albums/:albumId" element={<AlbumInfoPage />} />
+        <Route path="/users" element={<UsersPage />} />
+        <Route path="/users/:userId" element={<UserInfoPage />} />
+      </Routes>
+    </Router>
+  );
 }
-
-export default App
