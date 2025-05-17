@@ -33,36 +33,49 @@ const Albums = () => {
     setCurrentPage(1);
   };
 
+  const avatarColors = [
+    "bg-pink-500", "bg-yellow-400", "bg-blue-500", "bg-purple-500",
+    "bg-gray-400", "bg-red-400", "bg-green-500", "bg-indigo-500",
+  ];
+
   return (
-    <div className="overflow-x-auto">
-      <table className="table w-full border min-w-[1200px]">
-        <thead className="bg-green">
+    <div className="p-4 min-h-screen bg-white text-gray-800">
+      <h1 className="text-2xl font-bold mb-4">Albums</h1>
+      <table className="min-w-full border border-gray-300">
+        <thead className="bg-gray-100">
           <tr>
-            <th className="py-2 border min-w-[80px]">ID</th>
-            <th className="px-70 py-2 border min-w-[600px]">Title</th>
-            <th className="px-40 py-2 border min-w-[300px]">User</th>
-            <th className="px-5 py-2 border min-w-[200px]">Actions</th>
+            <th className="border border-gray-200 px-4 py-2 text-left min-w-[80px]">ID</th>
+            <th className="border border-gray-200 px-4 py-2 text-left min-w-[600px]">Title</th>
+            <th className="border border-gray-200 px-4 py-2 text-left min-w-[300px]">User</th>
+            <th className="border border-gray-200 px-4 py-2 text-left min-w-[200px]">Actions</th>
           </tr>
         </thead>
         <tbody>
-          {paginatedAlbums.map((album) => {
+          {paginatedAlbums.map((album, index) => {
             const user = getUser(album.userId);
+            const initials = user?.name
+              .split(" ")
+              .map((word) => word[0])
+              .join("")
+              .toUpperCase();
+            const color = avatarColors[index % avatarColors.length];
+
             return (
               <tr key={album.id} className="hover:bg-gray-50">
-                <td className="border px-4 py-2">{album.id}</td>
-                <td className="border px-4 py-2">{album.title}</td>
-                <td className="border px-4 py-2 flex items-center gap-2">
-                  <div className="w-8 h-8 bg-pink-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                    {user?.name
-                      .split(" ")
-                      .map((word) => word[0])
-                      .join("")
-                      .toUpperCase()}
+                <td className="border border-gray-300 px-4 py-2">{album.id}</td>
+                <td className="border border-gray-300 px-4 py-2">{album.title}</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  <div className="flex items-center gap-2">
+                    <div
+                      className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-semibold text-sm ${color}`}
+                    >
+                      {initials}
+                    </div>
+                    <span className="text-blue-600">{user?.name}</span>
                   </div>
-                  <span className="text-blue-600">{user?.name}</span>
                 </td>
-                <td className="border px-4 py-2">
-                  <button className="flex items-center gap-1 text-sm border rounded px-2 py-1 hover:bg-gray-100">
+                <td className="border border-gray-300 px-4 py-2">
+                  <button className="text-sm text-gray-700 border border-gray-300 px-2 py-1 rounded hover:bg-gray-100">
                     👁️ Show
                   </button>
                 </td>

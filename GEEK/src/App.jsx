@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Albums from "./pages/Albums";
-import UserInfo from "./pages/UserInfo";
+import UserInfo from "./pages/User";
 
 function App() {
   return (
