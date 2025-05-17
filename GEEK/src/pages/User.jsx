@@ -66,11 +66,15 @@ const Users = () => {
               >
                 {user.phone}
               </td>
-              <td className="border px-4 py-2 text-blue-600">
+              <td 
+                className="border px-4 py-2 text-blue-600 cursor-pointer underline"
+                onClick={() => window.open(`http://${user.website}`, '_blank')}
+              >
                 {user.website}
               </td>
-              <td className="border px-4 py-2"
-                 onClick={() => navigate(`/albums/${user.id}`)}
+              <td 
+                className="border px-4 py-2"
+                onClick={() => navigate(`/albums/${user.id}`)}
               >
                 <button className="text-sm text-gray-700 border border-gray-300 px-2 py-1 bg-white">
                   👁️ Show
