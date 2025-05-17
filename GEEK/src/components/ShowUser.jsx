@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const ShowUser = () => {
   const { userId } = useParams();
   const [user, setUser] = useState(null);
   const [albums, setAlbums] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUserAndAlbums = async () => {
@@ -79,7 +81,9 @@ return (
                     <tr key={album.id} className="hover:bg-gray-50">
                         <td className="border border-gray-300 px-4 py-2">{album.id}</td>
                         <td className="border border-gray-300 px-4 py-2">{album.title}</td>
-                        <td className="border border-gray-300 px-4 py-2">
+                        <td className="border border-gray-300 px-4 py-2"
+                        onClick={() => navigate(`/albums/${user.id}`)}
+                        >
                             <button className="text-sm text-gray-700 border border-gray-300 px-2 py-1 bg-white">
                                 👁️ Show
                             </button>
