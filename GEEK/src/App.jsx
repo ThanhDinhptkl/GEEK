@@ -1,4 +1,3 @@
-
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
@@ -8,9 +7,9 @@ import UserInfo from "./pages/UserInfo";
 function App() {
   return (
     <Router>
-      <div className="flex">
+      <div className="flex h-screen">
         <Sidebar />
-        <div className="p-6 w-full">
+        <div className="flex-1 p-6 overflow-auto bg-gray-900 text-white">
           <Routes>
             <Route path="/" element={<Navigate to="/albums" />} />
             <Route path="/albums" element={<Albums />} />
