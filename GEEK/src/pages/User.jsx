@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+
 const getInitials = (name) =>
   name
     ?.split(" ")
@@ -53,10 +54,18 @@ const Users = () => {
                 </div>
               </td>
               <td className="border px-4 py-2">{user.name}</td>
-              <td className="border px-4 py-2 text-blue-600">
+              <td
+                className="border px-4 py-2 text-blue-600 cursor-pointer"
+                onClick={() => window.location.href = `mailto:${user.email}`}
+              >
                 {user.email}
               </td>
-              <td className="border px-4 py-2">{user.phone}</td>
+              <td
+                className="border px-4 py-2 text-blue-600 cursor-pointer"
+                onClick={() => window.location.href = `tel:${user.phone}`}
+              >
+                {user.phone}
+              </td>
               <td className="border px-4 py-2 text-blue-600">
                 {user.website}
               </td>
