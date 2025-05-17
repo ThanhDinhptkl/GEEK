@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import Sidebar from "./components/Sidebar";
 import Albums from "./pages/Albums";
 import UserInfo from "./pages/User";
+import ShowUser from "./components/ShowUser";
+
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
             <Route path="/" element={<Navigate to="/albums" />} />
             <Route path="/albums" element={<Albums />} />
             <Route path="/users" element={<UserInfo />} />
+             <Route path="/users/:userId" element={<ShowUser />} />
           </Routes>
         </div>
       </div>
