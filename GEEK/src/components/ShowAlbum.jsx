@@ -93,7 +93,9 @@ const ShowAlbum = () => {
           >
             {user.name}
           </h2>
-          <p className="text-sm text-gray-600">{user.email}</p>
+          <p className="text-sm text-gray-600"
+          onClick={() => window.location.href = `mailto:${user.email}`}
+          >{user.email}</p>
         </div>
       </div>
 
